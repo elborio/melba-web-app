@@ -2,48 +2,21 @@
 
 {% block body %}
 
-    <div class="row login">
+    <form action="{{ path('login') }}" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="_username" value="{{ last_username }}" />
 
-        <div class="container">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="_password" />
 
-            <div class="col-sm-12">
-                <div class="form">
-                    <h2>Login to see Melba</h2>
-                    <p>Fill in the form below</p>
-                    {% for flash_message in app.session.flashBag.get('notice') %}
-                        <div class="flash-message">
-                            <p>{{ flash_message }} test</p>
+        {#
+            If you want to control the URL the user
+            is redirected to on success (more details below)
+            <input type="hidden" name="_target_path" value="/account" />
+        #}
 
-                        </div>
-                    {% endfor %}
+        <button type="submit">login</button>
+    </form>
 
-                    <form>
-                        <div class="mui-textfield mui-textfield--float-label">
-                            <input type="text" name="username" />
-                            <label>Username or email address</label>
-                        </div>
-                        <div class="mui-textfield mui-textfield--float-label formlast">
-                            <input type="password" name="password" /><br />
-                            <label>Password</label>
-                        </div>
-                        <button type="submit" >Login</button>
-                    </form>
-
-                    <p><a href="./register.html">Or click here to create a new account</a></p>
-
-                </div>
-            </div>
-
-        </div>
-
-    </div>
-
-
-   {# {{ form_start(form) }}
-    {{ form_row(form.username) }}
-    {{ form_row(form.password) }}
-
-    <button type="submit">Login!</button>
-    {{ form_end(form) }}#}
 
 {% endblock body %}
