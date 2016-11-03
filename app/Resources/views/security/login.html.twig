@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+
+    <div class="row login">
+
+        <div class="container">
+            {% if error %}
+                <div>{{ error.messageKey|trans(error.messageData, 'security') }}</div>
+            {% endif %}
+
+            <div class="col-sm-12">
+                <div class="form">
+                    <h2>Login to see Melba</h2>
+                    <p>Fill in the form below</p>
+                    {% for flash_message in app.session.flashBag.get('notice') %}
+                        <div class="flash-message">
+                            <p>{{ flash_message }} test</p>
+
+                        </div>
+                    {% endfor %}
+
+                    <form action="{{ path('login') }}" method="post">
+                        <div class="mui-textfield mui-textfield--float-label">
+                            <input type="text" id="username" name="_username" value="{{ last_username }}"/>
+                            <label for="username">Username</label>
+                        </div>
+                        <div class="mui-textfield mui-textfield--float-label formlast">
+                            <input type="password" id="password" name="_password"/><br/>
+                            <label for="password">Password</label>
+                        </div>
+                        <button type="submit">Login</button>
+                    </form>
+
+                    <p><a href="./register.html">Or click here to create a new account</a></p>
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock %}

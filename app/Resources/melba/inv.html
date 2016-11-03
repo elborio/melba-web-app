@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="../../favicon.ico">
+
+    <title>Melba Home</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="../../../web/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="../../../web/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="../../../web/css/style.css" rel="stylesheet">
+
+    <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
+    <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
+    <script src="./js/ie-emulation-modes-warning.js"></script>
+	
+	<!-- Import the Roboto font -->
+	<link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+	
+	<!-- Materialize CSS -->
+	<link href="http://cdn.muicss.com/mui-0.9.3/css/mui.min.css" rel="stylesheet" type="text/css" />
+    <script src="http://cdn.muicss.com/mui-0.9.3/js/mui.min.js"></script>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Melba Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="./index.html">Overview</a></li>
+            <li><a href="./beer.html">Beer</a></li>
+            <li><a href="./inv.html">Inventory</a></li>
+            <li><a href="http://www.eetlijst.nl/patiomelba?melba6" target="_blank">Dinner</a></li>
+            <li><a href="./cookbook.html">Cookbook</a></li>
+            <li><a href="./settings.html">Personal settings</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+	<div class="row welcome">
+	
+		<div class="container">
+		
+			<div class="col-sm-12">
+				<h1>Welcome, Gloria!</h1>
+			</div>
+			
+		</div>
+		
+	</div>
+	
+    <div class="container inventory">
+
+		<div class="row">
+		
+			<div class="col-sm-12">
+				<h2>The house inventory</h2>
+				<p>The following lists the house inventory when it comes to cooking supplies etc. Please update them when you notice it is not up-to-date.</p>
+			</div>
+			
+			<div class="col-sm-12 filter">
+				
+				<p>Filter on:</p>
+				<button>Toilet and Shower</button>
+				<button>Cooking</button>
+				<button>Spices</button>
+				<button>Essentials</button>
+				
+				<table>
+					<tr>
+						<th>Product</th>
+						<th>Category</th>
+						<th>Quantity</th>
+						<th>Date added</th>
+						<th>Edit quantity</th>
+					</tr>
+					<tr>
+						<td class="invName">Toilet Paper</td>
+						<td>Essentials</td>
+						<td>22 rolls</td>
+						<td class="data">22-06-2016</td>
+						<td><img src="./img/pencil-edit-button.png" /></td>
+					</tr>
+					<tr>
+						<td class="invName">Olive Oil</td>
+						<td>Cooking</td>
+						<td>1/2 flask</td>
+						<td class="data">20-06-2016</td>
+						<td><img src="./img/pencil-edit-button.png" /></td>
+					</tr>
+					<tr>
+						<td class="invName">Salt</td>
+						<td>Spices</td>
+						<td>1 can</td>
+						<td class="data">22-06-2016</td>
+						<td><img src="./img/pencil-edit-button.png" /></td>
+					</tr>
+					<tr>
+						<td class="invName">Pepper</td>
+						<td>Spices</td>
+						<td>2 cans</td>
+						<td class="data">22-06-2016</td>
+						<td><img src="./img/pencil-edit-button.png" /></td>
+					</tr>
+					<tr>
+						<td class="invName">Garbage Bags</td>
+						<td>Essentials</td>
+						<td>1 roll</td>
+						<td class="data">22-06-2016</td>
+						<td><img src="./img/pencil-edit-button.png" /></td>
+					</tr>
+					<tr>
+						<td class="invName">Penne</td>
+						<td>Cooking</td>
+						<td>300 gram</td>
+						<td class="data">22-06-2016</td>
+						<td><img src="./img/pencil-edit-button.png" /></td>
+					</tr>
+				</table>
+			</div>
+		
+		</div>
+
+    </div>
+	
+	<div class="row newInv" style="margin-bottom: 150px">
+	
+		<div class="container">
+		
+			<div class="col-sm-12">
+				<h2>Add new inventory item</h2>
+				
+				<form>
+					<div class="mui-textfield mui-textfield--float-label">
+						<input type="text" name="product" />
+						<label>Product Name</label>
+					</div>
+					<div class="mui-select">
+						<select name="category"><br />
+							<option value="Cooking">Cooking</option>
+							<option value="Essentials">Essentials</option>
+							<option value="Spices">Spices</option>
+							<option value="Toilet and Shower">Toilet and Shower</option>
+						</select>
+					</div>
+					<div class="mui-textfield mui-textfield--float-label">
+						<input type="text" />
+						<label>What quantity (for example gram or cans)</label>
+					</div>
+					<div class="mui-textfield mui-textfield--float-label formlast">
+						<input type="text" placeholder="" /><br />
+						<label>The amount (100, 1 or even 10.000)</label>
+					</div>
+					<div class="mui-textfield mui-textfield--float-label formlast">
+						<input type="text" placeholder="" /><br />
+						<label>Threshhold, when does it become dangerously low?</label>
+					</div>
+					<button type="submit" >Add to inventory</button>
+				</form>
+			
+				
+			</div>
+		
+		</div>
+	
+	</div>
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery.min.js"><\/script>')</script>
+    <script src="./js/bootstrap.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="./js/ie10-viewport-bug-workaround.js"></script>
+  </body>
+</html>

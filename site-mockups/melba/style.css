@@ -1,0 +1,351 @@
+/* General Rules */
+h2 {
+  color: #757575;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 1px;
+  text-align: center;
+  margin: 80px 0 35px 0 !important;
+}
+h3 {
+  color: #757575;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 1px;
+  margin: 5px 0 15px 0 !important;
+}
+h4 {
+  color: #757575;
+  font-family: 'Roboto', sans-serif;
+  letter-spacing: 1px;
+  margin: 45px 0 25px 0 !important;
+}
+body {
+  padding-top: 50px;
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+/* The Navigation */
+.navbar-fixed-top {
+  background-color: #1976d2 !important;
+}
+.navbar-brand {
+  color: #fff !important;
+}
+.icon-bar {
+  background-color: #fff !important;
+}
+.navbar-toggle {
+  background: none !important;
+}
+.navbar-toggle {
+  border-color: #1976d2 !important;	
+}
+.navbar-default {
+  border-color: #1976d2 !important;
+}
+.navbar-default li a {
+  color: #fff !important;
+}
+.navbar-nav>.open>a:hover {
+  background-color: #1976d2;
+}
+.navbar-collapse {
+  border-top: none !important;
+}
+
+/* Login and register pages */
+.login {
+  height: 100vh;
+  background-color: #2196F3;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+.form {
+  margin-top: 15vh;
+  background-color: #fff;
+  max-width: 400px;
+  margin-left: auto;
+  margin-right: auto;
+  padding: 75px 25px 50px 25px;
+  text-align: center;
+}
+.form label{
+  text-align: left;
+}
+.form h2 {
+  margin-top: 0 !Important;
+  margin-bottom: 5px !important;
+}
+.form button {
+  color: #ffffff;
+  padding: 10px 25px;
+  background-color: #2196F3;
+  border: none;
+  font-size: 16px;
+  margin-top: 25px;
+}
+.form form {
+  padding-bottom: 35px;
+}
+.form p {
+  margin-top: 15px;
+}
+.form p a {
+  color: inherit;
+}
+
+/* Overview (index page) */
+.overview {
+  text-align: center;
+}
+.overview table {
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
+}
+.overview table td {
+  text-align: left;
+}
+
+/* Welcome Screen */
+.welcome {
+  background-color: #2196F3;
+  height: 250px;
+}
+.welcome h1 {
+  color: #fff;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  letter-spacing: 1px;
+  font-size: 28px;
+  line-height: 250px;
+  margin: 0;
+  text-align: center;
+}
+
+/* Beer */
+.stripe {
+  text-align: center;
+}
+.stripe button {
+  color: #ffffff;
+  padding: 18px 25px;
+  background-color: #2196F3;
+  border: none;
+  font-size: 16px;
+}
+.stripestats {
+  text-align: left;
+  color: #212121;
+}
+.stripestats table {
+  margin-left: auto;
+  margin-right: auto;
+}
+.stripestats table td {
+  padding: 5px 5px 5px 5px;
+}
+.number{
+  text-align: right;
+  padding-left: 25px;
+  color: #ff5252;
+  font-weight: 600;
+}
+.stripehistory {
+  text-align: center;
+}
+.stripehistory button {
+  color: #ffffff;
+  padding: 18px 25px;
+  background-color: #2196F3;
+  border: none;
+  font-size: 16px;
+  min-width: 25%;
+  margin: 5px;
+}
+.historytable {
+  margin-top: 40px;
+}
+.historytable ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.data {
+  color: #757575;
+  padding-right: 25px;
+}
+.historytable img {
+  padding-left: 25px;
+  max-height: 12px;
+}
+
+/* Inventory */
+.inventory {
+  text-align: center;
+}
+.inventory p {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.inventory img {
+  margin-left: 35px;
+}
+.inventory table {
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 75%;
+  text-align: left;
+  margin-top: 40px;
+}
+.inventory table td, th {
+  padding: 10px 5px 5px 0px;
+}
+.inventory button {
+  color: #ffffff;
+  padding: 5px 15px;
+  background-color: #2196F3;
+  border: none;
+  font-size: 16px;
+  margin-left: 2px;
+  margin-bottom: 5px;
+}
+.filter {
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+.invName {
+  color: #ff5252;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+.newInv {
+  text-align: center;
+}
+.newInv label {
+  text-align: left;
+}
+.newInv form input, select {
+  margin: 10px 0;
+  min-width: 25%;
+}
+.newInv form button {
+  color: #ffffff;
+  padding: 5px 15px;
+  background-color: #2196F3;
+  border: none;
+  font-size: 16px !important;
+  margin-left: 2px;
+}
+.formlast {
+  margin-bottom: 0 !important;
+}
+
+/* Cookbook */
+.cookbook {
+  text-align: center;
+}
+.cookbook button {
+  color: #ffffff;
+  padding: 5px 15px;
+  background-color: #2196F3;
+  border: none;
+  font-size: 16px;
+  margin-left: 2px;
+  margin-bottom: 5px;
+}
+.card {
+  margin: 15px 0px;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+  padding: 0;
+}
+.card .header {
+  height: 150px;
+  position: relative;
+  background-size: cover;
+}
+.card .header h3 {
+  color: #fff;
+  font-size: 24px;
+  font-weight: 400;
+  font-family: 'Roboto', sans-serif;
+  position: absolute;
+  bottom: 0;
+  padding: 10px 25px;
+}
+.card .short {
+  font-size: 14px;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  padding: 20px 15px;
+  text-align: justify;
+}
+.card .short p {
+  margin-bottom: 0;
+}
+a .card .short p {
+  text-decoration: none;
+  color: rgba(0,0,0,.87);
+}
+.card .category {
+  border-top: 1px solid rgba(160,160,160,0.2);
+  text-align: left;
+  text-transform: uppercase;
+  color: #2196F3;
+  padding: 15px 15px;
+}
+.card .category ul{
+  list-style-type: none;
+  padding: 0;
+}
+.card .category ul li{
+  display: inline;
+  padding-right: 15px;
+  line-height: 24px;
+}
+.card .category .right {
+  float: left;
+}
+.card .category .left {
+  float: left;
+  margin-right: 25px;
+}
+
+/* Cookbook Single Recipe */
+.cookbookSingle .description {
+  text-align: center;
+}
+.cookbookSingle .description p {
+  margin-bottom: 50px;
+}
+.cookbookSingle .description ul {
+  list-style-type: none;
+  margin-bottom: 50px;
+}
+.cookbookSingle .description ul li {
+  display: inline;
+  padding-right: 15px;
+}
+.cookbookSingle .directions ol {
+  padding-left: 20px;
+}
+.cookbookSingle .details {
+  padding: 0 50px;
+}
+.cookbookSingle .image {
+  height: 150px;
+  background-size: cover;
+}
+.cookbookSingle .list input[type=checkbox] {
+  margin-right: 15px;
+}
+.cookbookSingle .list ul {
+  list-style-type: none;
+  padding: 0;
+}
