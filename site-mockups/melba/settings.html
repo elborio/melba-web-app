@@ -12,13 +12,13 @@
     <title>Melba Home</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../../../web/css/bootstrap.min.css" rel="stylesheet">
+    <link href="./css/bootstrap.min.css" rel="stylesheet">
 
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <link href="../../../web/css/ie10-viewport-bug-workaround.css" rel="stylesheet">
+    <link href="./css/ie10-viewport-bug-workaround.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="../../../web/css/style.css" rel="stylesheet">
+    <link href="./style.css" rel="stylesheet">
 
     <!-- Just for debugging purposes. Don't actually copy these 2 lines! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
@@ -38,36 +38,56 @@
     <![endif]-->
   </head>
 
-  <body style="padding-top: 0 !important;">
+  <body>
 
-	<div class="row login">
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">Melba Home</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="./index.html">Overview</a></li>
+            <li><a href="./beer.html">Beer</a></li>
+            <li><a href="./inv.html">Inventory</a></li>
+            <li><a href="http://www.eetlijst.nl/patiomelba?melba6" target="_blank">Dinner</a></li>
+            <li><a href="./cookbook.html">Cookbook</a></li>
+            <li><a href="./settings.html">Personal settings</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+
+	<div class="row welcome">
 	
 		<div class="container">
 		
 			<div class="col-sm-12">
-				<div class="form">
-					<h2>Login to see Melba</h2>
-					<p>Fill in the form below</p>
-					<form>f
-						<div class="mui-textfield mui-textfield--float-label">
-							<input type="text" name="username" />
-							<label>Username or email address</label>
-						</div>
-						<div class="mui-textfield mui-textfield--float-label formlast">
-							<input type="password" name="password" /><br />
-							<label>Password</label>
-						</div>
-						<button type="submit" >Login</button>
-					</form>
-					
-					<p><a href="./register.html">Or click here to create a new account</a></p>
-					
-				</div>
+				<h1>Welcome, Gloria!</h1>
 			</div>
 			
 		</div>
 		
 	</div>
+	
+    <div class="container stripe">
+
+		<div class="row">
+		
+			<div class="col-sm-12">
+				<h2>Personal and Household Settings</h2>
+			</div>
+		
+		</div>
+
+    </div>
 
 
     <!-- Bootstrap core JavaScript

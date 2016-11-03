@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="ca53f67e-a6cc-4dae-8edd-7315a97a6548" name="local_server" url="http://localhost">
+        <fileTransfer mountedRoot="F:\Servers\XAMPP2\htdocs\melba-app" accessType="MOUNT" />
+      </webServer>
+    </option>
+  </component>
+</project>
