@@ -192,7 +192,7 @@ class User implements UserInterface, \Serializable
     }
 
     /**
-     * @return mixed
+     * @return Group
      */
     public function getGroups()
     {
@@ -200,7 +200,7 @@ class User implements UserInterface, \Serializable
     }
 
     /**
-     * @param mixed $groups
+     * @param Group $groups
      */
     public function setGroups($groups)
     {
