@@ -1,14 +1,12 @@
 <?php
-
 namespace AppBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
-
 /**
- * @ORM\Entity
  * @ORM\Table(name="group_table")
+ * @ORM\Entity(repositoryClass="AppBundle\Entity\GroupRepository")
  */
 
 class Group
@@ -39,6 +37,12 @@ class Group
      * @ORM\Column(type="text")
      */
     private $description;
+
+    /**
+     * TODO:this is now a fixed invite key, but generating an invite class with a new key per invite is more secure.
+     * @ORM\Column(type="text")
+     */
+    private $inviteKey;
 
     /**
      * @ORM\ManyToMany(targetEntity="AppBundle\Entity\User")
@@ -232,4 +236,22 @@ class Group
     {
         return $this->modules;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getInviteKey()
+    {
+        return $this->inviteKey;
+    }
+
+    /**
+     * @param mixed $inviteKey
+     */
+    public function setInviteKey($inviteKey)
+    {
+        $this->inviteKey = $inviteKey;
+    }
+
+
 }

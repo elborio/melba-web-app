@@ -1,0 +1,13 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {{ form_start(form) }}
+    {{ form_row(form.name) }}
+
+
+    <button type="submit">Select Group</button>
+
+    {{ form_end(form) }}
+
+{% endblock %}

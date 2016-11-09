@@ -44,6 +44,11 @@ class User implements UserInterface, \Serializable
      */
     private $groups;
 
+    /**
+     * @var integer
+     */
+    private $currentGroup;
+
     public function __construct()
     {
         $this->isActive = true;
@@ -86,6 +91,7 @@ class User implements UserInterface, \Serializable
             $this->username,
             $this->password,
             $this->groups,
+            $this->currentGroup,
             // see section on salt below
             // $this->salt,
         ));
@@ -99,6 +105,7 @@ class User implements UserInterface, \Serializable
             $this->username,
             $this->password,
             $this->groups,
+            $this->currentGroup,
             // see section on salt below
             // $this->salt
             ) = unserialize($serialized);
@@ -206,6 +213,23 @@ class User implements UserInterface, \Serializable
     {
         $this->groups = $groups;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getCurrentGroup()
+    {
+        return $this->currentGroup;
+    }
+
+    /**
+     * @param mixed $currentGroup
+     */
+    public function setCurrentGroup($currentGroup)
+    {
+        $this->currentGroup = $currentGroup;
+    }
+
 
 
 }
