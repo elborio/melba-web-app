@@ -7,6 +7,7 @@ use AppBundle\Entity\User;
 use AppBundle\Form\GroupSelectorType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\Config\Definition\Exception\Exception;
+use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\Tests\Extension\Core\Type\SubmitTypeTest;
 use Symfony\Component\HttpFoundation\Request;
@@ -135,5 +136,26 @@ class GroupSelectionController extends Controller
         }
 
         return $this->render('create_group.html.twig', array('form' => $form->createView()));
+    }
+
+    /**
+     * @Route("/groups/invite", name="invite_to_group")
+     */
+    public function intviteToGroupAction($group)
+    {
+
+        $user = $this->getUser();
+        $groups = $user->getGroups();
+
+        $form = $this->createFormBuilder()->add('email', EmailType::class);
+
+        foreach ($groups as $g) {
+            if ($g->getId() == $group) {
+                $user->setCurrentGroup($group);
+                return $this->render('homepage/homepage.html.twig', array());
+            }
+        }
+
+        return $this->render('error_page.html.twig', array('error' => "An error occured"));
     }
 }
