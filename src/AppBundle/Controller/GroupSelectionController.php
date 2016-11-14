@@ -82,16 +82,28 @@ class GroupSelectionController extends Controller
 
     /**
      * @Route("/groups/set/{group}", name="select_group")
+     * @param $group integer
+     * @return Response
      */
     public function setGroupAction($group)
     {
 
+        /* @var $user User */
         $user = $this->getUser();
         $groups = $user->getGroups();
 
-        foreach ($groups as $g) {
+        /* @var $groupsArray Group[] */
+        $groupsArray = $groups->toArray();
+
+
+        foreach ($groupsArray as $g) {
+            $this->get('logger')->info("Message ". $g->getId(). " and " . $group. " expression is " .($g->getId() == $group));
             if ($g->getId() == $group) {
-                $user->setCurrentGroup($group);
+                $user->setCurrentGroup($g);
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($user);
+                $em->flush();
+                $this->get('logger')->info("Message ". $user->getCurrentGroup()->getName());
                 return $this->render('homepage/homepage.html.twig', array());
             }
         }

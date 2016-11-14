@@ -9,7 +9,7 @@
         <div class="container">
 
             <div class="col-sm-12">
-                <h1>Welcome {{ app.user.username }} group:{{ app.user.getCurrentGroup().getName() }}</h1>
+                <h1>Welcome {{ app.user.username }} group:{{ app.user.getCurrentGroup() }}</h1>
             </div>
 
         </div>
@@ -21,21 +21,27 @@
         <div class="row">
 
             <div class="col-sm-12">
-                <h2>This currently is the status of Patio Melba</h2>
+                <h2>This currently is the status of {{ app.user.getCurrentGroup() }}</h2>
             </div>
 
             <div class="col-sm-12">
                 <div class="col-md-4">
-                    <h4>Beer statistics:</h4>
+                    <h4>Users:</h4>
+                    <table>
+                        <tr>
+                            <td>The amount of beer you drank:</td>
+                            <td class="number">16</td>
+                        </tr>
 
-                    {{ render(controller('AppBundle:Streep:getStripeStats')) }}
+                    </table>
 
                     <div class="col-sm-12 stripe">
                         <button>Stripe 1 beer for yourself</button>
                     </div>
 
                 </div>
-                <div class="col-md-5">
+
+                {#<div class="col-md-5">
                     <h4>These items are (almost) out of stock:</h4>
                     <table>
                         <tr>
@@ -79,11 +85,14 @@
                         </div>
                     </a>
 
-                </div>
+                </div>#}
             </div>
-        </div>
 
+
+        </div>
     </div>
 
 
 {% endblock %}
+
+

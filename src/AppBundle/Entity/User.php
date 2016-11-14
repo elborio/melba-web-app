@@ -40,12 +40,14 @@ class User implements UserInterface, \Serializable
     private $isActive;
 
     /**
+     * @var ArrayCollection
      * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Group")
      */
     private $groups;
 
     /**
-     * @var integer
+     * @var Group
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Group")
      */
     private $currentGroup;
 
@@ -91,7 +93,6 @@ class User implements UserInterface, \Serializable
             $this->username,
             $this->password,
             $this->groups,
-            $this->currentGroup,
             // see section on salt below
             // $this->salt,
         ));
@@ -105,7 +106,6 @@ class User implements UserInterface, \Serializable
             $this->username,
             $this->password,
             $this->groups,
-            $this->currentGroup,
             // see section on salt below
             // $this->salt
             ) = unserialize($serialized);
@@ -199,7 +199,7 @@ class User implements UserInterface, \Serializable
     }
 
     /**
-     * @return Group
+     * @return ArrayCollection
      */
     public function getGroups()
     {
@@ -215,7 +215,7 @@ class User implements UserInterface, \Serializable
     }
 
     /**
-     * @return mixed
+     * @return Group
      */
     public function getCurrentGroup()
     {
@@ -223,7 +223,7 @@ class User implements UserInterface, \Serializable
     }
 
     /**
-     * @param mixed $currentGroup
+     * @param Group $currentGroup
      */
     public function setCurrentGroup($currentGroup)
     {

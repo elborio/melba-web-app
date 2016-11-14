@@ -14,6 +14,10 @@ class HomeController extends Controller
      */
     public function indexAction($name)
     {
+        $group = $this->getUser()->getCurrentGroup();
+        if (!isset($group)) {
+            return $this->redirectToRoute('list_groups_for_user');
+        }
         return $this->render('homepage/homepage.html.twig', array('name' => $name));
     }
 }
