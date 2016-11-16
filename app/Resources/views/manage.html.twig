@@ -1,0 +1,69 @@
+{% extends 'base.html.twig' %}
+
+{%  block body %}
+
+    {{ include('nav.html.twig') }}
+
+    <div class="row welcome">
+
+        <div class="container">
+
+            <div class="col-sm-12">
+                <h1>Welcome {{ app.user.username }} group:{{ app.user.getCurrentGroup().getName() }}</h1>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="container overview">
+
+        <div class="row">
+
+            <div class="col-sm-12">
+                <h2>This currently is the status of {{ app.user.getCurrentGroup().getName() }}</h2>
+            </div>
+
+            <div class="col-sm-12">
+                <div class="col-md-4">
+                    <h4>Users:</h4>
+                    {{ render(controller('AppBundle:GroupManagement:listUsers')) }}
+
+                </div>
+
+                <div class="col-md-5">
+                    <h4>These items are (almost) out of stock:</h4>
+                    {{ render(controller("AppBundle:Invite:sendInvite", {'request' : app.request})) }}
+                </div>
+                {#<div class="col-md-3">
+                    <h4>Recipe of the week:</h4>
+
+                    <a href="./cookbook_single.html">
+                        <div class="col-sm-12 card">
+                            <div class="header" style="background-image: url('./img/stamppot.jpg');">
+                                <h3>Stamppot boerenkool</h3>
+                            </div>
+                            <div class="short">
+                                <p>The traditional dutch winter meal. Easy to cook and prepare, but it takes some time to prepare the potatos.</p>
+                            </div>
+                            <div class="category">
+                                <ul>
+                                    <li>&euro; 2.45 p.p.</li>
+                                    <li>Beginner</li>
+                                    <li>30m</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </a>
+
+                </div>#}
+            </div>
+
+
+        </div>
+    </div>
+
+
+{% endblock %}
+
+

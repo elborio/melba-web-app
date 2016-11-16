@@ -1,0 +1,82 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    <div class="row welcome">
+
+        <div class="container">
+
+            <div class="col-sm-12">
+                <h1>Welcome, {{ app.user.username }}!</h1>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="container stripe">
+
+        <div class="row">
+
+            <div class="col-sm-12">
+                <h2>Stripe your beer</h2>
+                {% for flash_message in app.session.flashBag.get('notice') %}
+                    <p> {{ flash_message }} </p>
+                {% endfor %}
+                <a href="{{ path('streep_one') }}">
+                    <button>Stripe 1 beer for yourself</button>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="container stripestats">
+        <div class="row">
+
+            <div class="col-sm-12">
+                <h2>Statistics</h2>
+                {{ render(controller("AppBundle:Streep:getStripeStats")) }}
+
+            </div>
+        </div>
+    </div>
+
+    <div class="container stripehistory" style="margin-bottom: 150px">
+
+        <div class="row">
+
+            <div class="col-sm-12">
+                <h2>Your Stripe History</h2>
+                <button>Show last week</button>
+                <button>Show last month</button>
+                <br/>
+                <button>Show last year</button>
+                <button>Show all</button>
+            </div>
+
+            <div class="col-sm-12 historytable">
+                <ul>
+                    <li><span class="data">8 december 2016 - 16:11</span> 2 stripes <a href="#"><img
+                                    src="./img/clear-button.png"/></a></li>
+                    <li><span class="data">8 december 2016 - 15:21</span> 1 stripes <a href="#"><img
+                                    src="./img/clear-button.png"/></a></li>
+                    <li><span class="data">8 december 2016 - 14:38</span> 5 stripes <a href="#"><img
+                                    src="./img/clear-button.png"/></a></li>
+                    <li><span class="data">4 december 2016 - 17:18</span> 1 stripes <a href="#"><img
+                                    src="./img/clear-button.png"/></a></li>
+                    <li><span class="data">4 december 2016 - 16:11</span> 2 stripes <a href="#"><img
+                                    src="./img/clear-button.png"/></a></li>
+                    <li><span class="data">1 december 2016 - 20:47</span> 2 stripes <a href="#"><img
+                                    src="./img/clear-button.png"/></a></li>
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+{% endblock %}
+
+

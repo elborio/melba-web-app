@@ -2,8 +2,6 @@
 
 namespace AppBundle\Controller;
 
-use AppBundle\Entity\User;
-use AppBundle\Form\LoginType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -24,6 +22,20 @@ class LoginController extends Controller
 
         // last username entered by the user
         $lastUsername = $authenticationUtils->getLastUsername();
+
+        $user = $this->getUser();
+        if ($user) {
+            //TODO: make dynamic for user.
+            $group = $this->getDoctrine()->getRepository('AppBundle:Group')->find(1);
+            if ($group) {
+                $user->setGroups(array($group));
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($user);
+                $em->flush();
+            }
+
+            $this->addFlash('notice', 'hoi '. $user->getUsername()."test". $user->getGroups()->first()->getName());
+        }
 
         return $this->render('security/login.html.twig', array(
             'last_username' => $lastUsername,

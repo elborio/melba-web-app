@@ -1,0 +1,96 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    {{ include('nav.html.twig') }}
+    <div class="container cookbook">
+
+        <div class="row">
+            <div class="col-sm-12">
+                {% for group in groups %}
+                    <div class="col-sm-4">
+                        <a href="{{ path('select_group', {'group': group.id}) }}">
+                            <div class="col-sm-12 card">
+                                <div class="header" style="background-image: url('./img/pilaf.jpg');">
+                                    <h3>{{ group.name }}</h3>
+                                </div>
+                                <div class="short">
+                                    <p>{{ group.description }}</p>
+                                </div>
+                                <div class="category">
+                                    <ul>
+                                        <li>select</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="col-sm-12">
+                <div class="col-sm-4">
+                    <a href="cookbook_single.html" alt="Stamppot">
+                        <div class="col-sm-12 card">
+                            <div class="header" style="background-image: url('./img/stamppot.jpg');">
+                                <h3>Stamppot boerenkool</h3>
+                            </div>
+                            <div class="short">
+                                <p>The traditional dutch winter meal. Easy to cook and prepare, but it takes some time
+                                    to prepare the potatos.</p>
+                            </div>
+                            <div class="category">
+                                <ul>
+                                    <li>&euro; 2.45 p.p.</li>
+                                    <li>Beginner</li>
+                                    <li>30m</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-sm-4">
+                    <a href="cookbook_single.html" alt="Pizaaa!">
+                        <div class="col-sm-12 card">
+                            <div class="header" style="background-image: url('./img/pizaa.jpg');">
+                                <h3>Pizza</h3>
+                            </div>
+                            <div class="short">
+                                <p>Homemade pizza. Follow all the steps and end up with your perfect pizza.</p>
+                            </div>
+                            <div class="category">
+                                <ul>
+                                    <li>&euro; 3.56 p.p.</li>
+                                    <li>Advanced</li>
+                                    <li>60m</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+
+                <div class="col-sm-4">
+                    <a href="cookbook_single.html" alt="Pilaf!">
+                        <div class="col-sm-12 card">
+                            <div class="header" style="background-image: url('./img/pilaf.jpg');">
+                                <h3>Pilaf</h3>
+                            </div>
+                            <div class="short">
+                                <p>Pim his usual recipe. The tomato sauce combined with peaches, pork and some
+                                    vegetables. Can easily be combined with rice or mie.</p>
+                            </div>
+                            <div class="category">
+                                <ul>
+                                    <li>&euro; 2.30 p.p.</li>
+                                    <li>Intermediate</li>
+                                    <li>25m</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+{% endblock %}
+

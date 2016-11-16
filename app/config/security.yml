@@ -25,7 +25,8 @@ security:
 
             form_login:
               default_target_path: login
-              always_use_default_target_path: true
+              login_path: login
+              check_path: login
 
             logout:
               path:   /logout
@@ -48,6 +49,7 @@ security:
     access_control:
       - { path: ^/api, roles: [ROLE_ADMIN, ROLE_API] }
       - { path: ^/register, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+      - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
       - { path: ^/, roles: [ROLE_ADMIN, ROLE_API, ROLE_USER] }
 
     encoders:
