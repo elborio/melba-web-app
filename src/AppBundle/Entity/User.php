@@ -1,6 +1,7 @@
 <?php
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -38,11 +39,24 @@ class User implements UserInterface, \Serializable
      */
     private $isActive;
 
+    /**
+     * @var ArrayCollection
+     * @ORM\ManyToMany(targetEntity="AppBundle\Entity\Group")
+     */
+    private $groups;
+
+    /**
+     * @var Group
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Group")
+     */
+    private $currentGroup;
+
     public function __construct()
     {
         $this->isActive = true;
         // may not be needed, see section on salt below
         // $this->salt = md5(uniqid(null, true));
+        $this->groups = new ArrayCollection();
     }
 
     public function getUsername()
@@ -78,6 +92,7 @@ class User implements UserInterface, \Serializable
             $this->id,
             $this->username,
             $this->password,
+            $this->groups,
             // see section on salt below
             // $this->salt,
         ));
@@ -90,6 +105,7 @@ class User implements UserInterface, \Serializable
             $this->id,
             $this->username,
             $this->password,
+            $this->groups,
             // see section on salt below
             // $this->salt
             ) = unserialize($serialized);
@@ -181,4 +197,48 @@ class User implements UserInterface, \Serializable
     {
         return $this->isActive;
     }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getGroups()
+    {
+        return $this->groups;
+    }
+
+    /**
+     * @param ArrayCollection $groups
+     */
+    public function setGroups($groups)
+    {
+        $this->groups = $groups;
+    }
+
+    /**
+     * @return Group
+     */
+    public function getCurrentGroup()
+    {
+        return $this->currentGroup;
+    }
+
+    /**
+     * @param Group $currentGroup
+     */
+    public function setCurrentGroup($currentGroup)
+    {
+        $this->currentGroup = $currentGroup;
+    }
+
+    public function isInGroup(Group $group) {
+        foreach ($this->groups as $g) {
+            if ($g == $group) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+
 }
