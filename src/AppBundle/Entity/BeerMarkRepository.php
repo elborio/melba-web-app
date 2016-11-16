@@ -10,6 +10,7 @@ namespace AppBundle\Entity;
 
 
 use Doctrine\ORM\EntityRepository;
+use Symfony\Component\Validator\Constraints\DateTime;
 
 class BeerMarkRepository extends EntityRepository
 {
@@ -18,7 +19,8 @@ class BeerMarkRepository extends EntityRepository
      * @param $user User
      * @return int
      */
-    public function getBeerCountForUser($user) {
+    public function getBeerCountForUser($user)
+    {
         return $this->createQueryBuilder('s')
             ->select("COUNT(s.id)")
             ->where("s.user = :user")
@@ -28,11 +30,25 @@ class BeerMarkRepository extends EntityRepository
             ->getQuery()->getSingleScalarResult();
     }
 
-    public function getBeerCountForGroup($group) {
+    public function getBeerCountForGroup($group)
+    {
         return $this->createQueryBuilder('s')
             ->select("COUNT(s.id)")
             ->where("s.group = :group")
             ->setParameter("group", $group)
+            ->getQuery()->getSingleScalarResult();
+    }
+
+    public function getBeerCountForGroupLastWeek($group)
+    {
+        $dateTime = new \DateTime("-1 week");
+
+        return $this->createQueryBuilder('s')
+            ->select("COUNT(s.id)")
+            ->where("s.group = :group")
+            ->setParameter("group", $group)
+            ->andWhere("s.dateAdded > :date")
+            ->setParameter("date", $dateTime)
             ->getQuery()->getSingleScalarResult();
     }
 }

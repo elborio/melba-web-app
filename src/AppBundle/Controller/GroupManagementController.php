@@ -21,4 +21,12 @@ class GroupManagementController extends Controller
 
         return $this->render('manage.html.twig', array());
     }
+
+    public function listUsersAction() {
+
+        $users = $this->getDoctrine()->getRepository("AppBundle:User")->getUsersInGroup($this->getUser()->getCurrentGroup());
+
+
+        return $this->render('user_table.html.twig', array('table_rows' => $users));
+    }
 }

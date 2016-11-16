@@ -27,17 +27,7 @@
             <div class="col-sm-12">
                 <div class="col-md-4">
                     <h4>Users:</h4>
-                    <table>
-                        <tr>
-                            <td>The amount of beer you drank:</td>
-                            <td class="number">16</td>
-                        </tr>
-
-                    </table>
-
-                    <div class="col-sm-12 stripe">
-                        <button>Stripe 1 beer for yourself</button>
-                    </div>
+                    {{ render(controller('AppBundle:GroupManagement:listUsers')) }}
 
                 </div>
 

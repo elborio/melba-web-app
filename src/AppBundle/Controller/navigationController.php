@@ -33,8 +33,8 @@ class NavigationController extends Controller
         $modules = $group->getModules();
         $links = array();
         $testLink = new Link();
-        $testLink->setPath("/test");
-        $testLink->setName("test");
+        $testLink->setPath("/group/manage");
+        $testLink->setName("Manage Group");
         array_push($links, $testLink);
 
         if ($modules) {

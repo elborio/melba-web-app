@@ -62,10 +62,12 @@ class StreepController extends Controller
         $this->get('logger')->info(" amount =". $amount);
 
         $totalAmount = $this->getBeerTotalForCurrentGroup();
+        $thisWeek = $this->getBeerTotalForLastWeek();
 
         return $this->render('blocks/beer_stats_block.html.twig', array(
             'current_user_amount' => $amount,
-            'total_amount' => $totalAmount
+            'total_amount' => $totalAmount,
+            'this_week' => $thisWeek
         ));
     }
 
@@ -79,6 +81,12 @@ class StreepController extends Controller
         $amount = $this->getDoctrine()->getRepository("AppBundle:BeerMark")->getBeerCountForGroup($this->getUser()->getCurrentGroup());
         return $amount;
 
+    }
+
+    private function getBeerTotalForLastWeek()
+    {
+        $amount = $this->getDoctrine()->getRepository("AppBundle:BeerMark")->getBeerCountForGroupLastWeek($this->getUser()->getCurrentGroup());
+        return $amount;
     }
 
 

@@ -58,6 +58,8 @@ class InviteController extends Controller
             $em->flush();
 
             $this->addFlash('notice', "Added to group ".$invite->getGroup()->getName());
+
+            return $this->redirectToRoute('home');
         } else {
             //no invite found.
             $this->addFlash('notice', "No invite found");

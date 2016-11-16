@@ -13,6 +13,10 @@ use Doctrine\ORM\EntityRepository;
 class UserRepository extends EntityRepository
 {
 
+    /**
+     * @param Group $group
+     * @return array
+     */
     public function getUsersInGroup(Group $group) {
         return $this->createQueryBuilder('u')
             ->join('u.groups', 'g')

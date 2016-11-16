@@ -61,6 +61,7 @@ class RegistrationController extends Controller
     public function registrationSuccessAction() {
 
         $this->addFlash('message', 'registration succes');
-        return $this->render('registration/registration_finished.html.twig');
+        return $this->redirectToRoute('home');
+        //return $this->render('registration/registration_finished.html.twig');
     }
 }
