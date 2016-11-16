@@ -42,7 +42,7 @@ class GroupInvite
     /**
      * @ORM\Column(type="text")
      */
-    private $key;
+    private $inviteKey;
 
     /**
      * Get id
@@ -109,9 +109,9 @@ class GroupInvite
      *
      * @return GroupInvite
      */
-    public function setKey($key)
+    public function setInviteKey($inviteKey)
     {
-        $this->key = $key;
+        $this->inviteKey = $inviteKey;
 
         return $this;
     }
@@ -121,9 +121,9 @@ class GroupInvite
      *
      * @return string
      */
-    public function getKey()
+    public function getInviteKey()
     {
-        return $this->key;
+        return $this->inviteKey;
     }
 
     /**

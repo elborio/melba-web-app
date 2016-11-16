@@ -12,4 +12,16 @@ use Doctrine\ORM\EntityRepository;
  */
 class GroupInviteRepository extends EntityRepository
 {
+
+    /**
+     * @return GroupInvite
+     */
+    public function findInviteByEmailAndCode($email, $key) {
+        return $this->createQueryBuilder('i')
+            ->where("i.email = :email")
+            ->andWhere("i.inviteKey = :key")
+            ->setParameter("email", $email)
+            ->setParameter("key", $key)
+            ->getQuery()->getOneOrNullResult();
+    }
 }

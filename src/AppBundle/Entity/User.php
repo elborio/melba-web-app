@@ -207,7 +207,7 @@ class User implements UserInterface, \Serializable
     }
 
     /**
-     * @param Group $groups
+     * @param ArrayCollection $groups
      */
     public function setGroups($groups)
     {
@@ -228,6 +228,15 @@ class User implements UserInterface, \Serializable
     public function setCurrentGroup($currentGroup)
     {
         $this->currentGroup = $currentGroup;
+    }
+
+    public function isInGroup(Group $group) {
+        foreach ($this->groups as $g) {
+            if ($g == $group) {
+                return true;
+            }
+        }
+        return false;
     }
 
 

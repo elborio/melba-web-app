@@ -65,13 +65,16 @@ doctrine:
         naming_strategy: doctrine.orm.naming_strategy.underscore
         auto_mapping: true
 
+cspoo_swiftmailer_mailgun:
+    key: "key-0038ade1e4b1b3d6a0a096bdb51ad481"
+    domain: "sandbox5fb2e9dd29d44ecbbec26168e744ce4d.mailgun.org"
+    #http_client: 'httplug.client' # Optional. Defaults to null and uses dicovery to find client.
+
 # Swiftmailer Configuration
 swiftmailer:
-    transport: "%mailer_transport%"
-    host:      "%mailer_host%"
-    username:  "%mailer_user%"
-    password:  "%mailer_password%"
-    spool:     { type: memory }
+  transport: "mailgun"
+  spool:     { type: memory }
+
 
 
 
