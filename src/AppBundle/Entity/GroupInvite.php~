@@ -1,0 +1,46 @@
+<?php
+/**
+ * Created by PhpStorm.
+ * User: Boris
+ * Date: 11/14/2016
+ * Time: 7:13 PM
+ */
+
+namespace AppBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Class GroupInvite
+ * @package AppBundle\Entity
+ * @ORM\Entity(repositoryClass="GroupInviteRepository")
+ */
+class GroupInvite
+{
+    /**
+     * @ORM\Column(type="integer")
+     * @ORM\Id()
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Group")
+     */
+    private $group;
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $email;
+
+    /**
+     * @ORM\Column(type="datetime")
+     */
+    private $expiration;
+
+    /**
+     * @ORM\Column(type="text")
+     */
+    private $key;
+}
