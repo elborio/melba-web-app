@@ -1,12 +1,12 @@
-{% extends 'base.html.twig' %}
+{% extends 'base_no_nav.html.twig' %}
 
 {% block body %}
 
     <table class="table">
         {% for user in users %}
             <tr>
-                <td>{{ user.name }}</td>
-                <td>{{ user.description }}</td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.email }}</td>
 
             </tr>
         {% endfor %}

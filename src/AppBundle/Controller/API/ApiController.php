@@ -14,9 +14,16 @@ class ApiController extends Controller
     }
 
     /**
+     * @Route ("/api/register_phone")
+     */
+    public function registerPhoneAction() {
+
+        return new Response("Hoi");
+    }
+
+    /**
      * @Route ("/api")
      */
-
     public function mainAction() {
 
         /*$response = new Response();

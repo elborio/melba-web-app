@@ -4,3 +4,8 @@ app:
 
 logout:
   path: /logout
+
+secure:
+  path: /api/register_phone
+  defaults: { _controller: AppBundle:API/Api:registerPhone}
+  schemes: [https]
